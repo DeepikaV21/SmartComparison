@@ -8,6 +8,6 @@ namespace SmartPrice.Models
 
         public string ProductUrl { get; set; }
 
-        public IEnumerable<Offer> AllOffers { get; set; }
+        public List<Offer> AllOffers { get; set; }
     }
 }
