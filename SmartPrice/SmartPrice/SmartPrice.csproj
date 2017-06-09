@@ -175,11 +175,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Business\SearchProvider.cs" />
     <Compile Include="Common\Constants.cs" />
+    <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Offer.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\SearchModel.cs" />
     <Compile Include="Models\StoreData.cs" />
@@ -189,6 +191,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\Laptop.jpg" />
+    <Content Include="Content\images\Logo.JPG" />
+    <Content Include="Content\images\mobile.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -219,6 +224,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\HomePage\About.cshtml" />
+    <Content Include="Views\HomePage\Contact.cshtml" />
+    <Content Include="Views\HomePage\HomePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
