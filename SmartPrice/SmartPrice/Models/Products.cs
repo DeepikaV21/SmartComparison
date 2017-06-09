@@ -11,6 +11,6 @@ namespace SmartPrice.Models
 
         public string ProductImage { get; set; }
 
-        public IEnumerable<StoreData> ProductOffer { get; set; }
+        public List<StoreData> ProductOffer { get; set; }
     }
 }
