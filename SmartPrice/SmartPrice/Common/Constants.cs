@@ -16,7 +16,7 @@ namespace SmartPrice.Common
             get { return _apiKey; }
             set
             {
-                _apiKey = ConfigurationManager.AppSettings.Get("APIKey");
+                _apiKey = "SEM3147C30F97A28FACC3A1EBFB81A68ACC1";//ConfigurationManager.AppSettings.Get("APIKey");
             }
 
         }
@@ -26,7 +26,7 @@ namespace SmartPrice.Common
             get { return _apiSecret; }
             set
             {
-                _apiSecret = ConfigurationManager.AppSettings.Get("APISecret");
+                _apiSecret = "Njc2OGVhZGI2Y2EwYzNjYjFjZDEyYzBjZTRjMGRiMTE"; //ConfigurationManager.AppSettings.Get("APISecret");
             }
 
         }
