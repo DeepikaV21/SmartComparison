@@ -53,7 +53,7 @@ namespace SmartPrice.Models
         // public int updated_at { get; set; }
         public List<string> images { get; set; }
         public string weight { get; set; }
-        //  public List<Sitedetail> sitedetails { get; set; }
+         public List<Sitedetail> sitedetails { get; set; }
         public string description { get; set; }
         public Features features { get; set; }
         public int images_total { get; set; }

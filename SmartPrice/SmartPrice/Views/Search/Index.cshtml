@@ -4,16 +4,47 @@
     string searchParameter = string.Empty;
 }
 
-<h2>Index</h2>
 
-<label>Search: </label>
 <br/>
 
-
-@Html.TextBoxFor(model => model.Query);
-@Html.ActionLink("Search", "Search", "Search",new { query = Model.Query})
-
-
+<table class="table-bordered">
+    @foreach (var item in Model.SearchResults)
+    {
+    <tr>
+        <td>
+            <div>
+                @*<img class="img" src="https://img2.smartprix.com/mobiles/1102tagxx76/s-1/lenovo_yoga_3_8inch_tablet_wifi_4g_16gb.jpg" alt="Lenovo Yoga 3 8inch Tablet (WiFi+4G+16GB)">*@
+                <img src="@item.ProductImage" style="width:40%;height:40%"/>
+            </div>
+        </td>
+        <td>
+            <div>
+                <lable class="col-sm-3"><strong>@item.ProductName</strong></lable>
+            </div>
+        </td>
+        <td>
+            <div>
+                <table>
+                    @foreach(var product in item.ProductOffer)
+                    {
+                        <tr>
+                           <a href="@product.ProductUrl">@product.StoreName</a> 
+                            <br />
+                            @foreach (var price in product.AllOffers)
+                            {
+                                <label style="color:darkblue"> @price.Currency : @price.Price</label> 
+                               <label> <strong> Sold By</strong>@price.Seller</label>
+                               <br />
+                            }
+                            <br />
+                        </tr>
+                    }
+                </table>
+            </div>
+        </td>
+    </tr>
+    }
+</table>
 <div id="searchResults">
 
 </div>

@@ -31,14 +31,14 @@ namespace SmartPrice.Controllers
 
             searchModel.Query = query;
             searchModel.PageNumber = 1;
-            var searchResults = searchBusiness.GetSearchResult("laptop");
+            var searchResults = searchBusiness.GetSearchResult(query);
             if (searchResults != null)
             {
                 searchModel.SearchResults = searchResults;
-                return PartialView("index", null);
+                return PartialView("index", searchModel);
             }
 
-            return PartialView("index", null);
+            return PartialView("index", searchModel);
         }
     }
 }

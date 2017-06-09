@@ -38,7 +38,8 @@ namespace SmartPrice.Business
                 {
                     var model = new Products();
                     model.ProductName = (String)searchProducts[i]["name"];
-                    
+                    model.ProductID = (String)searchProducts[i]["sem3_id"];
+
                     if (searchProducts[i]["images"].Count() > 0)
                     {
                         model.ProductImage = (String)searchProducts[i]["images"][0];
@@ -53,6 +54,7 @@ namespace SmartPrice.Business
                     {
                         var storeInfo = new StoreData()
                         {
+                            StoreName = (String)ecommerceStores[k]["name"],
                             Sku = (String)ecommerceStores[k]["sku"],
                             ProductUrl = (String)ecommerceStores[k]["url"],
                             AllOffers = new List<Offer>()
@@ -70,8 +72,10 @@ namespace SmartPrice.Business
 
                             storeInfo.AllOffers.Add(offer);
                         }
-
+                        //storeInfo.AllOffers=storeInfo.AllOffers.OrderBy(i => i.Price).ToList();
                         model.ProductOffer.Add(storeInfo);
+                        model.ProductPrice = storeInfo.AllOffers.Min(x => x.Price);
+
                     }
 
                     models.Add(model);
