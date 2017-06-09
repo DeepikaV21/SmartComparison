@@ -12,5 +12,7 @@ namespace SmartPrice.Models
         public int PageNumber { get; set; }
 
         public List<Products> SearchResults { get; set; }
+
+        public List<Offer> OfferResults { get; set; }
     }
 }
