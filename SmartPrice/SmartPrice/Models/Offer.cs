@@ -9,5 +9,7 @@
         public string Currency { get; set; }
 
         public string Availaibility { get; set; }
+        public string SiteDetails { get; set; }
+
     }
 }

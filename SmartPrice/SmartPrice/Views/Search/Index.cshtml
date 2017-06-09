@@ -3,17 +3,12 @@
     ViewBag.Title = "Index";
     string searchParameter = string.Empty;
 }
-
 <h2>Index</h2>
-
 <label>Search: </label>
-<br/>
-
+<br />
 
 @Html.TextBoxFor(model => model.Query);
-@Html.ActionLink("Search", "Search", "Search",new { query = Model.Query})
-
+@Html.ActionLink("Search", "Search", "Search", new { query = Model.Query })
 
 <div id="searchResults">
-
 </div>

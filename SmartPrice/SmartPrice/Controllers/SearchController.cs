@@ -16,14 +16,13 @@ namespace SmartPrice.Controllers
     {
         private Constants constant = new Constants();
         private SearchProvider searchBusiness = new SearchProvider();
-        
+
         // GET: Search
         public ActionResult Index()
         {
             SearchModel model = new SearchModel();
             return View(model);
         }
-
 
         public PartialViewResult Search(string query)
         {
@@ -35,10 +34,20 @@ namespace SmartPrice.Controllers
             if (searchResults != null)
             {
                 searchModel.SearchResults = searchResults;
-                return PartialView("index", null);
+                return PartialView("index", searchModel);
             }
 
-            return PartialView("index", null);
+            return PartialView("index", searchModel);
+        }
+
+        public PartialViewResult Offers(string sem3Id)
+        {
+            SearchModel searchModel = new SearchModel();
+
+            List<Offer> OfferList = new List<Offer>();
+            OfferList = searchBusiness.GetOfferResult("7JAykYaFyiYscEmcAwYC64");
+            searchModel.OfferResults = OfferList;
+            return PartialView("Index", searchModel);
         }
     }
 }
